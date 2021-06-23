@@ -148,11 +148,11 @@ namespace CalculatorApp_Test
         [DataTestMethod]
         [DataRow(-3, -1)]
         [TestCategory("Subtraction")]
-        public void SubtractingTwoNegativeNumbersWillGiveNegativeResult(double left, double right)
+        public void SubtractingTwoNegativeNumbers(double left, double right)
         {
 
             double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
-            Assert.IsTrue(result < 0);
+            Assert.AreEqual(-2d,result);
 
         }
 
@@ -164,7 +164,7 @@ namespace CalculatorApp_Test
         {
 
             double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
-            Assert.AreEqual(8d,result);
+            Assert.IsTrue(result > 0);
 
         }
 
@@ -176,7 +176,7 @@ namespace CalculatorApp_Test
         {
 
             double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
-            Assert.AreEqual(-8d, result);
+            Assert.IsTrue(result < 0);
 
         }
 
@@ -232,7 +232,7 @@ namespace CalculatorApp_Test
 
         [TestMethod]
         [DataTestMethod]
-        [DataRow(-5, -2)]
+        [DataRow(3, 2)]
         [TestCategory("Subtraction")]
         public void SubtractingTwoDoubleTypeNumberWillGiveDoubleTypeResult(double left, double right)
         {
@@ -252,6 +252,129 @@ namespace CalculatorApp_Test
             double result = CalculatorApp_CalculatorLibrary.Calculator.subThree(left, right, thirdNum);
             Assert.AreEqual(5d, result);
 
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, 5)]
+        [TestCategory("Multiplication")]
+        public void MultiplicationExample(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.AreEqual(15d, result);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, 50)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingWithNumberEndingWithZeroWillGiveResultWithLastDigitAsZero(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double lastDigit = result % 10;
+            Assert.AreEqual(0d, lastDigit);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 2, 5)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingMoreThanTwoNumbers(double left, double right, double thirdNum)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multipleThree(left, right, thirdNum);
+            Assert.AreEqual(50d, result);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-3, -5)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingTwoNegativeNumberWillGivePositiveResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.IsTrue(result > 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, -5)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingOnePositiveAndOneNegativeNumberWillGiveNegativeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.IsTrue(result < 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, 0)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingZeroWithNumberWillGiveZeroAsResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.IsTrue(result == 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 2)]
+        [TestCategory("Multiplication")]
+        public void MultiplyingTwoDoubleTypeNumberWillGiveDoubleTypeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.IsInstanceOfType(result, typeof(double));
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, 5)]
+        [TestCategory("Multiplication")]
+        public void MultiplicationFollowsAssociativeProperty(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.AreEqual(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-3, -5)]
+        [TestCategory("Multiplication")]
+        public void MultiplicationFollowsAssociativePropertyWithNegativeNumbersToo(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            Assert.AreEqual(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, 5, 5)]
+        [TestCategory("Multiplication")]
+        public void MultiplicationWillFollowAssociativePropertyEvenWithMoreThanTwoNumbers(double left, double right, double thirdNum)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multipleThree(left, right, thirdNum);
+            double result2 = CalculatorApp_CalculatorLibrary.Calculator.multipleThree(left, thirdNum, right);
+            double result3 = CalculatorApp_CalculatorLibrary.Calculator.multipleThree(thirdNum, left, right);
+            Assert.AreEqual(result, result2);
+            Assert.AreEqual(result, result3);
+            Assert.AreEqual(result2, result3);
         }
     }
 }
