@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CalculatorApp_Test
@@ -13,6 +14,7 @@ namespace CalculatorApp_Test
         {
             
             double result = CalculatorApp_CalculatorLibrary.Calculator.add(left, right);
+           
             Assert.AreEqual(5d, result);
 
         }
@@ -375,6 +377,119 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, result2);
             Assert.AreEqual(result, result3);
             Assert.AreEqual(result2, result3);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(15, 5)]
+        [TestCategory("Division")]
+        public void DivisionExample(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.AreEqual(3d, result);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-15, -5)]
+        [TestCategory("Division")]
+        public void DividingTwoNegativeNumberWillGivePositiveResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsTrue(result > 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-15, 5)]
+        [TestCategory("Division")]
+        public void DividingWithNegativeNumberOnLeftSideWillGiveNegativeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsTrue(result < 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(15,-5)]
+        [TestCategory("Division")]
+        public void DividingWithNegativeNumberOnRightSideWillGiveNegativeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsTrue(result < 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 2)]
+        [TestCategory("Division")]
+        public void DividingTwoDoubleTypeNumberWillGiveDoubleTypeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsInstanceOfType(result, typeof(double));
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 0)]
+        [TestCategory("Division")]
+        public void DividingWithZeroOnRightSideWillThrowException(double left, double right)
+        {
+            Assert.ThrowsException<DivideByZeroException>(()=> CalculatorApp_CalculatorLibrary.Calculator.divide(left, right));
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(0, 5)]
+        [TestCategory("Division")]
+        public void DividingWithZeroOnLeftSideWillZeroAsResult(double left, double right)
+        {
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsTrue(result == 0);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(20, 2)]
+        [TestCategory("Division")]
+        public void DivisionDontFollowAssociativeProperty(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.AreNotSame(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(20, -2)]
+        [TestCategory("Division")]
+        public void DivisionDontFollowAssociativePropertyWithNegativeNumbersToo(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.AreNotSame(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 10)]
+        [TestCategory("Division")]
+        public void DividingWithBiggerNumberOnRightSideWillHaveResultBetweenZeroAndOne(double left, double right)
+        {
+            double result = CalculatorApp_CalculatorLibrary.Calculator.divide(left, right);
+            Assert.IsTrue(result > 0);
+            Assert.IsTrue(result < 1);
         }
     }
 }

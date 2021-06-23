@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using CalculatorApp_Library;
 
 namespace CalculatorApp.Pages
 {
@@ -39,7 +40,7 @@ namespace CalculatorApp.Pages
             switch (operation)
             {
                 case "add":
-                    result = leftNumber + rightNumber;
+                    result = Calculator.add(leftNumber + rightNumber;
                     ResultSet = true;
                     break;
                 case "sub":
