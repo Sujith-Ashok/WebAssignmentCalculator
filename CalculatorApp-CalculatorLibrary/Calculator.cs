@@ -31,6 +31,14 @@ namespace CalculatorApp_CalculatorLibrary
             return leftNumber + rightNumber + thirdNumber;
         }
 
-        
+        static public double subThree(double leftNumber, double rightNumber, double thirdNumber)
+        {
+            return leftNumber - rightNumber - thirdNumber;
+        }
+
+        static public double multipleThree(double leftNumber, double rightNumber, double thirdNumber)
+        {
+            return leftNumber * rightNumber * thirdNumber;
+        }
     }
 }

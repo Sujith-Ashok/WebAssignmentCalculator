@@ -144,5 +144,114 @@ namespace CalculatorApp_Test
 
         }
 
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-3, -1)]
+        [TestCategory("Subtraction")]
+        public void SubtractingTwoNegativeNumbersWillGiveNegativeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.IsTrue(result < 0);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(3, -5)]
+        [TestCategory("Subtraction")]
+        public void SubtractingWithNegativeNumberOnRightSideMakesResultPositiveValue(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.AreEqual(8d,result);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-3, 5)]
+        [TestCategory("Subtraction")]
+        public void SubtractingWithNegativeNumberOnLeftSideMakesResultNegativeValue(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.AreEqual(-8d, result);
+
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 0)]
+        [TestCategory("Subtraction")]
+        public void SubtractingZeroFromAnyNumberWillAlwaysGiveResultSameAsThatNumber(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.AreEqual(result, left);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(5, 2)]
+        [TestCategory("Subtraction")]
+        public void SubtractionDontFollowAssociativeProperty(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.AreNotSame(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-5, -2)]
+        [TestCategory("Subtraction")]
+        public void SubtractionDontFollowAssociativePropertyWithNegativeNumbersToo(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.AreNotSame(result, resultReverse);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(2, 5, 3)]
+        [TestCategory("Subtraction")]
+        public void SubtractionWillNotFollowAssociativePropertyWithMoreThanTwoNumbers(double left, double right, double thirdNum)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.subThree(left, right, thirdNum);
+            double result2 = CalculatorApp_CalculatorLibrary.Calculator.subThree(left, thirdNum, right);
+            double result3 = CalculatorApp_CalculatorLibrary.Calculator.subThree(thirdNum, left, right);
+            Assert.AreNotSame(result, result2);
+            Assert.AreNotSame(result, result3);
+            Assert.AreNotSame(result2, result3);
+        }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-5, -2)]
+        [TestCategory("Subtraction")]
+        public void SubtractingTwoDoubleTypeNumberWillGiveDoubleTypeResult(double left, double right)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.sub(left, right);
+            Assert.IsInstanceOfType(result, typeof(double));
+        }
+
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(8, 2, 1)]
+        [TestCategory("Subtraction")]
+        public void SubtractingMoreThanTwoNumbers(double left, double right, double thirdNum)
+        {
+
+            double result = CalculatorApp_CalculatorLibrary.Calculator.subThree(left, right, thirdNum);
+            Assert.AreEqual(5d, result);
+
+        }
     }
 }
