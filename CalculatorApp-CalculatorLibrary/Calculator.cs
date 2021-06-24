@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CalculatorApp_CalculatorLibrary
 {
-    public class Calculator
+    public static class Calculator
     {
         static public double add(double leftNumber, double rightNumber)
         {
@@ -13,7 +13,7 @@ namespace CalculatorApp_CalculatorLibrary
             return leftNumber - rightNumber;
         }
 
-        static public double multiple(double leftNumber, double rightNumber)
+        static public double multiply(double leftNumber, double rightNumber)
         {
             return leftNumber * rightNumber;
         }

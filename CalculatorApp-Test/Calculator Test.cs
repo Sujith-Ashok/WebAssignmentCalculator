@@ -263,7 +263,7 @@ namespace CalculatorApp_Test
         public void MultiplicationExample(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.AreEqual(15d, result);
 
         }
@@ -275,7 +275,7 @@ namespace CalculatorApp_Test
         public void MultiplyingWithNumberEndingWithZeroWillGiveResultWithLastDigitAsZero(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             double lastDigit = result % 10;
             Assert.AreEqual(0d, lastDigit);
 
@@ -300,7 +300,7 @@ namespace CalculatorApp_Test
         public void MultiplyingTwoNegativeNumberWillGivePositiveResult(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.IsTrue(result > 0);
 
         }
@@ -312,7 +312,7 @@ namespace CalculatorApp_Test
         public void MultiplyingOnePositiveAndOneNegativeNumberWillGiveNegativeResult(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.IsTrue(result < 0);
 
         }
@@ -324,7 +324,7 @@ namespace CalculatorApp_Test
         public void MultiplyingZeroWithNumberWillGiveZeroAsResult(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.IsTrue(result == 0);
 
         }
@@ -336,7 +336,7 @@ namespace CalculatorApp_Test
         public void MultiplyingTwoDoubleTypeNumberWillGiveDoubleTypeResult(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.IsInstanceOfType(result, typeof(double));
         }
 
@@ -347,8 +347,8 @@ namespace CalculatorApp_Test
         public void MultiplicationFollowsAssociativeProperty(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
-            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.AreEqual(result, resultReverse);
         }
 
@@ -359,8 +359,8 @@ namespace CalculatorApp_Test
         public void MultiplicationFollowsAssociativePropertyWithNegativeNumbersToo(double left, double right)
         {
 
-            double result = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
-            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiple(left, right);
+            double result = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
+            double resultReverse = CalculatorApp_CalculatorLibrary.Calculator.multiply(left, right);
             Assert.AreEqual(result, resultReverse);
         }
 
