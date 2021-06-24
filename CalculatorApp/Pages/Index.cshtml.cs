@@ -48,7 +48,7 @@ namespace CalculatorApp.Pages
                     ResultSet = true;
                     break;
                 case "mul":
-                    result = Calculator.multiple(leftNumber, rightNumber)r;
+                    result = Calculator.multiply(leftNumber, rightNumber);
                     ResultSet = true;
                     break;
                 case "div":
