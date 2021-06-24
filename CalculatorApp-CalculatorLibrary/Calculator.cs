@@ -29,6 +29,7 @@ namespace CalculatorApp_CalculatorLibrary
                 return leftNumber / rightNumber;
 
             throw new DivideByZeroException("Cannot divide a number by zero");
+            
         }
 
 

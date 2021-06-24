@@ -6,6 +6,7 @@ namespace CalculatorApp_Test
     [TestClass]
     public class CalculatorTest
     {
+        //Addition Test 1
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, 3)]
@@ -19,6 +20,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 2
         [TestMethod]
         [DataTestMethod]
         [DataRow(-2, -3)]
@@ -31,6 +33,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 3
         [TestMethod]
         [DataTestMethod]
         [DataRow(-2, 3)]
@@ -43,6 +46,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 4
         [TestMethod]
         [DataTestMethod]
         [DataRow(-2, 2)]
@@ -55,6 +59,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 5
         [TestMethod]
         [DataTestMethod]
         [DataRow(-2, 5)]
@@ -67,6 +72,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 6
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, -5)]
@@ -79,6 +85,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Addition Test 7
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, 5)]
@@ -91,6 +98,7 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, resultReverse);
         }
 
+        //Addition Test 8
         [TestMethod]
         [DataTestMethod]
         [DataRow(-2, -5)]
@@ -103,6 +111,7 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, resultReverse);
         }
 
+        //Addition Test 9
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, 5, 3)]
@@ -118,8 +127,9 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result2, result3);
         }
 
-        
 
+
+        //Addition Test 10
         [TestMethod]
         [DataTestMethod]
         [DataRow(0, 5)]
@@ -134,6 +144,7 @@ namespace CalculatorApp_Test
 
 
 
+        //Subtraction Test 1
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 1)]
@@ -146,6 +157,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Subtraction Test 2
         [TestMethod]
         [DataTestMethod]
         [DataRow(-3, -1)]
@@ -158,6 +170,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Subtraction Test 3
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, -5)]
@@ -170,6 +183,8 @@ namespace CalculatorApp_Test
 
         }
 
+
+        //Subtraction Test 4
         [TestMethod]
         [DataTestMethod]
         [DataRow(-3, 5)]
@@ -182,6 +197,8 @@ namespace CalculatorApp_Test
 
         }
 
+
+        //Subtraction Test 5
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 0)]
@@ -193,6 +210,8 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, left);
         }
 
+
+        //Subtraction Test 6
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 2)]
@@ -205,6 +224,7 @@ namespace CalculatorApp_Test
             Assert.AreNotSame(result, resultReverse);
         }
 
+        //Subtraction Test 7
         [TestMethod]
         [DataTestMethod]
         [DataRow(-5, -2)]
@@ -217,6 +237,7 @@ namespace CalculatorApp_Test
             Assert.AreNotSame(result, resultReverse);
         }
 
+        //Subtraction Test 8
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, 5, 3)]
@@ -232,6 +253,7 @@ namespace CalculatorApp_Test
             Assert.AreNotSame(result2, result3);
         }
 
+        //Subtraction Test 9
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 2)]
@@ -244,6 +266,7 @@ namespace CalculatorApp_Test
         }
 
 
+        //Subtraction Test 10
         [TestMethod]
         [DataTestMethod]
         [DataRow(8, 2, 1)]
@@ -256,6 +279,8 @@ namespace CalculatorApp_Test
 
         }
 
+
+        //Multiplication Test 1
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 5)]
@@ -268,6 +293,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 2
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 50)]
@@ -281,6 +307,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 3
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 2, 5)]
@@ -293,6 +320,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 4
         [TestMethod]
         [DataTestMethod]
         [DataRow(-3, -5)]
@@ -305,6 +333,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 5
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, -5)]
@@ -317,6 +346,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 6
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 0)]
@@ -329,6 +359,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Multiplication Test 7
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 2)]
@@ -340,6 +371,7 @@ namespace CalculatorApp_Test
             Assert.IsInstanceOfType(result, typeof(double));
         }
 
+        //Multiplication Test 8
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 5)]
@@ -352,6 +384,7 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, resultReverse);
         }
 
+        //Multiplication Test 9
         [TestMethod]
         [DataTestMethod]
         [DataRow(-3, -5)]
@@ -364,6 +397,7 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result, resultReverse);
         }
 
+        //Multiplication Test 10
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 5, 5)]
@@ -379,6 +413,7 @@ namespace CalculatorApp_Test
             Assert.AreEqual(result2, result3);
         }
 
+        //Division Test 1
         [TestMethod]
         [DataTestMethod]
         [DataRow(15, 5)]
@@ -391,6 +426,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Division Test 2
         [TestMethod]
         [DataTestMethod]
         [DataRow(-15, -5)]
@@ -403,6 +439,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Division Test 3
         [TestMethod]
         [DataTestMethod]
         [DataRow(-15, 5)]
@@ -415,6 +452,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Division Test 4
         [TestMethod]
         [DataTestMethod]
         [DataRow(15,-5)]
@@ -427,6 +465,7 @@ namespace CalculatorApp_Test
 
         }
 
+        //Division Test 5
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 2)]
@@ -438,6 +477,7 @@ namespace CalculatorApp_Test
             Assert.IsInstanceOfType(result, typeof(double));
         }
 
+        //Division Test 6
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 0)]
@@ -447,6 +487,7 @@ namespace CalculatorApp_Test
             Assert.ThrowsException<DivideByZeroException>(()=> CalculatorApp_CalculatorLibrary.Calculator.divide(left, right));
         }
 
+        //Division Test 7
         [TestMethod]
         [DataTestMethod]
         [DataRow(0, 5)]
@@ -457,6 +498,7 @@ namespace CalculatorApp_Test
             Assert.IsTrue(result == 0);
         }
 
+        //Division Test 8
         [TestMethod]
         [DataTestMethod]
         [DataRow(20, 2)]
@@ -469,6 +511,7 @@ namespace CalculatorApp_Test
             Assert.AreNotSame(result, resultReverse);
         }
 
+        //Division Test 9
         [TestMethod]
         [DataTestMethod]
         [DataRow(20, -2)]
@@ -481,6 +524,7 @@ namespace CalculatorApp_Test
             Assert.AreNotSame(result, resultReverse);
         }
 
+        //Division Test 10
         [TestMethod]
         [DataTestMethod]
         [DataRow(5, 10)]
